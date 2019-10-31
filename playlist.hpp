@@ -5,7 +5,7 @@
 #define __PLAYLIST_HPP
 
 #include <string>
-#include <vector>
+#include <list>
 
 #include "song.hpp"
 #include "album.hpp"
@@ -19,7 +19,7 @@ public:
     std::string getName() const;
     
     // get  the songs in the playlist
-    std::vector<Song const *> const& getSongs() const;
+    std::list<Song const *> const& getSongs() const;
     
     // add to the playlist methods 
     void add(Song const& song);
@@ -28,12 +28,11 @@ public:
     
     void remove(Song const& song);
     
-    void place_order(Song const& song, int placement);
+    void placeOrder(Song const& song, int placement);
 
 private:
     std::string m_name; 
-    int m_numSongs; 
-    std::vector<Song const *> m_playlist;
+    std::list<Song const *> m_playlist;
 };
 
 #endif // __PLAYLIST_HPP
