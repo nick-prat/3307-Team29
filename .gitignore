@@ -1,0 +1,4 @@
+*.o
+songtest
+compile_flags.txt
+*.mp3
