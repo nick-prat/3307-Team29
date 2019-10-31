@@ -8,7 +8,7 @@
 
 Playlist shufflePlaylist(Playlist const& playlist) {
     auto songs = playlist.getSongs();
-    decltype(songs) newSongs{};
+    auto newSongs = std::list<Song const*>();
     std::copy(std::begin(songs), std::end(songs), std::back_inserter(newSongs));
 
     std::random_device rd;
