@@ -8,8 +8,9 @@
 class Album {
 public:
     std::vector<Song const*> getSongs() const;
+
 private:
-    std::vector<Song const*> m_albums;
+    std::vector<Song const*> m_songs;
 };
 
 #endif // __ALBUM_HH

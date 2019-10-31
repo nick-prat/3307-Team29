@@ -8,12 +8,15 @@
 
 Playlist shufflePlaylist(Playlist const& playlist) {
     auto songs = playlist.getSongs();
-    auto newSongs = std::list<Song const*>();
-    std::copy(std::begin(songs), std::end(songs), std::back_inserter(newSongs));
+    auto newSongsVector = std::vector<Song const*>();
+    std::copy(std::begin(songs), std::end(songs), std::back_inserter(newSongsVector));
 
     std::random_device rd;
     std::mt19937 g(rd());
-    std::shuffle(std::begin(newSongs), std::end(newSongs), g);
+    std::shuffle(std::begin(newSongsVector), std::end(newSongsVector), g);
 
-    return Playlist(playlist.getName() + "_shuffled", std::move(newSongs));
+    auto newSongsList = std::list<Song const*>();
+    std::copy(std::begin(newSongsVector), std::end(newSongsVector), std::back_inserter(newSongsList));
+
+    return Playlist(playlist.getName() + "_shuffled", std::move(newSongsList));
 }

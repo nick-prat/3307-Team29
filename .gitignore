@@ -1,4 +1,5 @@
 *.o
 songtest
 playpausetest
+playlisttest
 compile_flags.txt

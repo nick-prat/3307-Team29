@@ -10,6 +10,10 @@ Song::Song(std::string const& filename)
     }
 }
 
+bool Song::operator==(Song const& song) const {
+    return m_name == song.m_name;
+}
+
 std::string const& Song::getName() const {
     return m_name;
 }
