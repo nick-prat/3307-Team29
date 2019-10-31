@@ -13,7 +13,8 @@
 class Playlist {
 public:
     // constructor 
-    Playlist(std::string const& name); 
+    Playlist(std::string const& name);
+    Playlist(std::string const& name, std::list<Song const*>&& songs);
     
     // playlist name methods
     std::string getName() const;
@@ -32,7 +33,7 @@ public:
 
 private:
     std::string m_name; 
-    std::list<Song const *> m_playlist;
+    std::list<Song const *> m_songs;
 };
 
 #endif // __PLAYLIST_HPP
