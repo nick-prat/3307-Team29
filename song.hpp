@@ -10,6 +10,8 @@ class Song {
 public:
     Song(std::string const& filename);
 
+    bool operator==(Song const& song) const;
+
     Mix_Music* getMixMusic() const;
 
 private:
