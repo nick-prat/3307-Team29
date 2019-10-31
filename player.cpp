@@ -28,6 +28,22 @@ void Player::play(Playlist const& playlist) {
 
 }
 
+void Player::pause() const {
+    if (isMusicPlaying() && !isMusicPaused()) {
+        Mix_PauseMusic();
+    }   
+}
+
+void Player::resume() const {
+    if (isMusicPlaying() && isMusicPaused()) {
+        Mix_ResumeMusic();
+    }
+}
+
+bool Player::isMusicPaused() const {
+    return Mix_PausedMusic();
+}
+
 bool Player::isMusicPlaying() const {
     return Mix_PlayingMusic();
 }

@@ -14,6 +14,9 @@ public:
     void play(Artist const& artist);
     void play(Playlist const& playlist);
 
+    void pause() const;
+    void resume() const;
+    bool isMusicPaused() const;
     bool isMusicPlaying() const;
     void pauseUntilDonePlayer() const;
 
